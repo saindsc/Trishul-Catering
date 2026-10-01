@@ -1,0 +1,73 @@
+const section = (id, name, type, items, description = '') => ({ id, name, type, description, items: items.map((itemName, index) => ({ id: `${id}-${index + 1}`, name: itemName, type, category: name })) });
+
+// Source: Trishul Caterers Menu New 2.pdf (primary). A4 is used only for sections absent there.
+export const menuSections = [
+  section('sweets', 'Sweets', 'veg', ['Annamya Laddu','Chakkera Pongali','Annavaram Prasadam','Poornam','Rajula Poornam','Bobbattlu','Kowa Bobbattlu','Jilebi','Bellam Jilebi','Paneer Jilebi','Pine Apple Jilebi','Laddu','Mothichoor Laddu','Bandhar Laddu','Carrot Halwa','Sorakaya Halwa','Badhham Halwa','Dry Fruit Halwa','Gummadi Kaya Kaju Halwa','Pancha Ratan Halwa','Kala Jamun','Gulab Jamuna','Angoor Jamun','Badhusha','Mysore Pak','Madatha Kaja','Kakinada Kaja','Kowa Gajji Kaya','Kowa Puri','Semiya Kesari','Rawwa Kesari','Kaddhu Ka Kheer','Double Ka Meetha','Shahi Thukada','Pala Thalikalu','Kurbani Ka Meetha','Semiya Payasam','Phirni','Rasamalai','Baked Rasagulla','Triffle Pudding','Apricot Pudding','Junnu','Jangry','Thawa Sweet','Dry Fruit Bhell','Agra Pan','Pine Apple Roll','Kaju Katli','Pistha Katli','Anjeer Roll','Kaju Barfi','Papaya Halwa','Cham Cham','Pakam Gaare','Creamy Fruit','Malai Blue Berry','Orange Blossom','Mango Alaska','Shubiya Toast','Dry Fruit Kunafa','Seethe Phal Rabidi','Pootha Rekulu','Jeedulu','Soampapidi','Raagi Laddu','Oats Laddu','Ariselu','Sunnu Undalu']),
+  section('juices', 'Juice’s', 'veg', ['Water Melon Juice','Musk Melon Juice','Pine Apple Juice','Mango Juice','Apple Juice','Banana Juice','Grape Juice','Sugar Cane','Badham Cold','Badham Milk Hot','Fruit Punch','Straw Berry Punch','Coconut Delight','Chocolate Milk Shake','Strawberry Milk Shake','Mango Milk Shake','Litchi Milk Shake','Dragon Fruit','Kiwi Jwi','Sapota Milk Shake','Vanilla Milk Shake','Dry Fruit Punch']),
+  section('veg-snacks', 'Veg Snacks', 'veg', ['Veg Spring Roll','Baby Corn Spring Roll','Palak Cheese Rolls','Shangai Roll','Hara Bara Kabab','Beetroot Kabab','Cheese Balls','Aloo Cheese Shots','Corn Cheese Nuggets','Veg Corn Samosa','Onion Samosa','Veg Bullet','Crispy Corn','Veg KFC','Paneer 65','Chilly Paneer','Paneer Popcorn','Finger Paneer','Chilly Mushroom','Mushroom Cigar','Paneer Tikka','Pine Apple Tikka','Broccoli Tikka','Mushroom Tikka','Aloo Tikka','Makhai Palak Tikka','Baby Corn 65','Baby Corn Manchuria','Golden Fried Baby Corn','Crispy Veg']),
+  section('hots', 'Hots', 'veg', ['Mirchi Bajji','Masala Wada','Gaare','Nellore Gaare','Mix Veg Wada','Dhahi Wada','Onion Pakodi','Cut Mirchi','Capsicum Bajji','Aloo Bajji','Aratikaya Bajji','Ajwan Pakodi','Pesara Punugulu','Thamala Paku Bajji','Aloo Bonda','Sweet Corn Wada','Bobbarla Wada']),
+  section('rotis', 'Rotis', 'veg', ['Phulka','Jonna Roti','Poori','Palak Poori','Methi Poori','Butter Naan','Garlic Naan','Rumali Roti','Tandoori Roti','Masala Kulcha','Stuffed Kulcha','Baby Naan','Pudina Naan','Kerala Parotha','Aloo Paratha','Laccha Parotha','Thawa Parotha','Makhai Ki Roti','Dil Naan']),
+  section('kurma-curries', 'Kurma Curries', 'veg', ['Paneer Butter Masala','Aloo Paneer','Paneer Capsicum Kurma','Methi Mutter Malai','Mushroom Paneer','Palak Paneer','Methi Chaman','Gongora Paneer','Baby Corn Paneer','Mushroom Kurma','Poolmakhan Capsicum Kurma','Mixed Veg Kurma','Navarathan Kurma','Aloo Capsicum Kurma','Chole Masala','Thotakura Liver Kurma','Baby Corn Kaju Kurma','Capsicum Kaju Kurma','Kadai Veg','Veg Chat Pata']),
+  section('special-gravy-curries', 'Special Greavy Curry’s', 'veg', ['Gutthi Vankaya','Gutthi Dondakaya','Vankaya Green Piece','Pesara Pungala Curry','Milmaker Curry','Chikkudu Kaya TomatoCurry','Vellulli Kaju Curry','Kandha Bachali','Beera Kaya Shanagapappu Curry','Aratikaya Masala Curry','Gorakakaya Tomato Curry','Mango Madrasoin','Drumstick Curry','Gongoora Milmaker','Gongoora Mushroom Curry','Gobi Tomato Curry','Thati Munjala Curry','Batthaya Thonala Curry','Malai Koftha','Vankaya Green Piece Cury','Stuffed Vankaya','Vankaya Aloo Curry','Vankaya Mango Curry','Vankaya Milmaker Curry','Vankaya Kaju Curry','Vankaya Drumstick Curry','Aloo Tomato Curry','Aloo Capsicum (without Greavy)','Drumstick Bhendi Kaju Curry','Drum Stick Milmaker Curry','Beerakaya Curry','Beerakaya Alasanadala Curry','Beerakaya Tomato Curry','Sorakaya Messagu Curry','Sorakaya Perugu Curry','Pendalam Mango Curry','Pendalam Vankaya Curry','Drumstick Shanagapappu Curry','Naatu Chikkudu Tomato Curry','Boondhi Kaju Curry']),
+  section('special-rice', 'Special Rice Items', 'veg', ['Chintha Pandu Pulihora','Mango Pulihora','Lemon Pulihora','Coconut Rice','Gongoora Kaju Rice','Pudina Rice','Karivepaku Rice','Kothimeera Rice','Tomato Rice','Ghee Karam Podi','Rice Nuvvula Rice','Milmaker Rice','Vegetable Fried Rice','Jeera Rice','Corn Methi Pulav','Sambar Rice','Avakaya Muddha Pappu Rice','Curd Rice','Bisibelle Bath']),
+  section('veg-dum-biryani', 'Veg Dum Biriyani’s', 'veg', ['Veg Dum Biryani','Vankaya Dum Biryani','Panasakaya Dum Biryani','Aloo Ulavacharu Dum Biryani','Mushroom Dum Biryani','Baby Corn Biryani','Panasakaya Pulao','Chitti Muthyalu Paneer Pulav','Chitti Muthyalu Mushroom Pulav','Paneer Kaju Pulav','Gongoora Kaju Dum Biryani','Plain Biryani']),
+  section('dal-items', 'Dal Item’s', 'veg', ['Dosakaya Pappu','Tomato Pappu','Mango Pappu','Palakura Pappu','Palakura Mango Pappu','Gangavelli Mango Pappu','Thotakura Pappu','Mixed Dal Pappu','Gongoora Pappu','Beerakaya Pappu','Vaankaya Pappu','Chinthakaya Pappu','Avakaya Pappu','Podi Pappu','Muddha Pappu','Tomato Pesara Pappu']),
+  section('veg-fry-items', 'Veg Fry Item’s', 'veg', ['Bhendi Kaju Fry','Dondakaya Pakodi Fry','Aloo Green Piece Fry','Aloo Beans Carrot Fry','Beans Carrot Dum Fry','Vankaya Pakodi Fry','Aloo Fry','Milmaker Beerakaya Fry','Kandha Fry','Kandha Porutu','Sweet Potato Chips','Chilakada Dumpa Fry','Panasa Pottu Fry','Mushroom Fry','Aratikaya Allam Fry','Thotakura Liver Fry','Capsicum Shanaga Karam','Capsicum Pakodi','Chamadagaddga Finger Chips','Gobi-65','Cabbage-65','Cheema Chinthakaya-65','Cabbage Shanaga Pappu Dum Fry','Chickkudu Kaya Dum Fry','Aloo Poosa Fry','Kandha Poosa Fry','Kakara Kaya Fry']),
+  section('liquid-items', 'Liquid Items', 'veg', ['Sambar','Pappu Charu','Pesara Pappu Charu','Tomato Rasam','Miriyala Rasam','Beetroot Rasam','Ulavacharu +cream','Aratiakaya Pulusu','Gummadikaya Pulusu','Mukkala Pulusu','Dhappalam','Menthe Majjiga','Mukkala Majjiga Puludu','Pacchi Pulusu']),
+  section('roti-chutneys', 'Roti Chutney’s', 'veg', ['Beerakaya Tomato Chutney','Kothimeera Tomato Chutney','Jamakaya Chutney','Cabbage Chutney','Nuvvula Chutney','Gongora Chutney','Kobbar I Mamidikaya','Thurumu Chutney','Kobbari Chintakaya Chutney','Sorakaya Chutney','Beetroot Chutney','Palli Tomato Chutney','Allam Chutney','Dondakaya Mukkala Chutney','Dosakaya Mukkala Chutney']),
+  section('avakayalu', 'Avakayalu', 'veg', ['Vellulli Kaju Avakaya','Lemon Avakaya','Dosa Avakaya','Mixed Veg Avakaya','Madras Onion Avakaya','Usiri Avakaya','Gongoora Avakaya','Vankaya Avakaya','Mukkakada Avakaya','Apple Avakaya','Mamidikaya Avakaya','Thunakaya Avakaya','Grape Avakaya','Gobi Avakaya','Carrot Thurumu Avakaya']),
+  section('powders', 'Powder’s', 'veg', ['Kandhi Podi','Kobbarri Shanaga Karam','Nuvvula Karam','Kaarivepak Karam Ghee']),
+  section('curds', 'Curds', 'veg', ['Bucket Curd','Pot Curd','Raitha']),
+  section('papads', 'Papad’s', 'veg', ['Papads','Appadam Puvvulu','Fryams','Saggu Biyyam Vadiyalu','Minapa Vadiyalu','Challa Mirchi']),
+  section('salads', 'Salad’s', 'veg', ['Greaan Salad','Sprouts','Russian Salad','Papidi Chat','Aloo Chana Salad']),
+  section('chat-items', 'Chat Items', 'veg', ['Pani Poori','Aloo Ragada','Rajasthani Kachori','Samosa Ragada','Dhahi Poori','Ragada Kachori','Bhel Poori','Aloo Tikka','Laccha Katlet']),
+  section('chinese', 'Chinese', 'veg', ['Veg Soft Noodles','Singapore Noodles','Thai Noodles','Schezwan Noodles','American Chopes','Aloo Manchuria','Gobi Manchuria','Veg Manchuria','Mushroom Machuria','Bay Corn Machuria','Paneer Manchuria','Schezwan Fried Rice','Seven Jewel Rice']),
+  section('italian-snacks', 'Italian Snack’s', 'veg', ['Pizza','Mini Pizza','Garlic Bread','Mini Burger','Pastha (red&white)','Italian Stuffed Roll','Kataghe Cheese Grilled','Pita Trade','Morokhan Toast','Schizzler Veg','Thin Crust Pizza','Grilled Pizza','Pizza Burns']),
+  section('tiffins', 'South Indian Tiffin Item’s', 'veg', ['Idly','Wada','Pottikala Idly','Thatta Idly','Mysore Bajji','Tomato Bath','Pongal','Dosa (all Verietys)','Pesarattu','Poori','Kobbari Chutney','Palli Putnala Chutney','Tomato Chutney','Allam Chutney','Karam Podi','Ghee','Sambar','Poori Kurma','Tea','Coffee']),
+  section('fruits', 'Fruit’s', 'veg', ['Water Melon','Musk Melon','Apple','Pine Apple','Papaya','Anjeer','Grapes','Australian Grapes','Orange','Sapota','Mango','Dates','Straw Berry','Litchi','Sweet Tamarind','Dragon','Kiwi','Jam (guava)']),
+  section('ice-creams', 'Ice Cream’s', 'veg', ['Vanilla','Straw Berry','Butter Scotch','Caramel Nuts','Pistha','Tooty Fruity','3 In 1 Guava','Honey Moon Delight','Seethe Phal','Mango','Anjeer Badham','Chocolate','Orange','Kulfi','Badham Kulfi','Black Current']),
+  section('mocktails', 'Mocktails', 'veg', ['Virgin Mojitho','Blue Lagoon','Jeera Cordial','Pina Colada','Strawberry Punch','Water Melon','Guawa Crush']),
+  section('veg-soups', 'Veg Soups', 'veg', ['Sweet Corn','Veg Clear Soup','Tomato Soup','Hot & Sour Soup']),
+  section('chicken-snacks', 'Chicken Snack’s', 'nonveg', ['Chilly Chicken','Pepper Chicken','Chicken 65','Dragon Chicken','Chicken Majestic','Chicken Kfc','Chicken Manchuria','Lemon Chicken','Butter Garlic Chicken','Chicken Lollypup','Kaju Chicken Pakodi','Ginger Chicken','Hong Kong Chicken','Manchew Chicken','Supreme Chicken','Thread Chicken','Chicken Drumsticks','Chicken555','Chicken Thangidi Kabab','Chicken Cream Stone','Chicken Malai Kabab','Chicken Reshmi Kabab','Chicken Tikka','Chicken Hariyali Kabab','Chicken Stick','Chicken Harabara Kabab','Chicken Jafran Tikka','Chicken Tandori Kabab','Chicken Peshwar Tikka','Chicken Khandhar Kabab','Achari Wings Tikka','Chicken Lolly Pup Tikka','Chicken Bunno Kabab','Tandori Chicken']),
+  section('prawns-snacks', 'Prawns Snack’s', 'nonveg', ['Loose prawns','Chilli prawns','Butter garlic prawns','Tempura prawns','Prawns tikka','Prawns fry','Sweet chilly prawns']),
+  section('egg-snacks', 'Egg Snack’s', 'nonveg', ['Chilly Egg','Pepper Egg','Masala Egg','Boiled Egg','Egg Manchuria','Egg 65','Half Boiled Egg']),
+  section('sea-food', 'Sea Food', 'nonveg', ['Fish Fry','Apollo Fish','Fish Tikka','Thawa Fish','Banana Fish','Koraminu Fish Fry','Netthalu Pakodi','Katte Parigela Fry','Palmfret Fry','Palmfret Iguru','Pandugappa Fry','Pandugappa Iguru','Vanjram Fry','Vanjram Iguru','Sorapittu','Koyyangi Iguru']),
+  section('mutton-curries', 'Mutton Curry’s', 'nonveg', ['Telangana Mutton Curry','Mutton Rogan Josh','Methi Mutton','Mutton Dalcha','Gongoora Mutton','Capsicum Mutton','Dosakaya Mutton','Mamidikaya Mutton Curry','Munakkada Mutton Curry','Dhoopudu Poothu Mutton Curry','Mutton Lamb Roast','Malai Muttons','Mutton Marag','Mutton Paaya']),
+  section('egg', 'Egg', 'nonveg', ['Kodiguddu Pachiroyyalu','Naatu Kodi Guddu Endu Royyalu','Ulavacharu Egg','Egg Masala','Egg Burji','Tomato Egg']),
+  section('prawns-curries', 'Prawn’s', 'nonveg', ['Prawns Curry','Ginger Prawns','Gongoora Pachi Royyalu','Prawns Fry']),
+  section('chicken-curries', 'Chicken Curry’s', 'nonveg', ['Telangana Chicken Curry','Chicken Semi Greavy','Dum Ka Chicken','Home Style Chicken','Butter Chicken','Gongoora Chicken','Palak Chicken','Kothimeera Chicken','Methi Chicken','Shanaga Pappu Chicken','Capsicum Chicken','Achari Chicken','Roasted Chicken','Mughalai Chicken','Red Chicken','Green Chicken','Chicken Majjiga Pulusu','Natu Kodi Chicken','Curry Natu Kodi Fry','Ankapur Natu Kodi Pulusu','Natu Kodi Iguru','Naatu Kodi Majjiga Pulusu']),
+  section('crabs', 'Crab’s', 'nonveg', ['Crab Fry','Stuffed Crab','Crab Meet Fry','Peethala Pulusu','Vankai Peethalu','Pethala Iguru']),
+  section('mutton-snacks', 'Mutton Snacks', 'nonveg', ['Mutton Snack’s','Mutton Keema Balls','Patthar Ka Ghost','Nalgonda Mutton','Mutton Sheek Kabab','Mutton Shikampuri','Mutton Barra Kabab','Mutton Haleem Shots','Mutton Ghee Roast']),
+  section('nonveg-biryani', 'Non Veg Biryani’s', 'nonveg', ['Telangana Bagara Rice','Chicken Dum Biryani','Mutton Dum Biryani','Mutton Dhoopudu Poothu Pulav','Mutton Keema Pulav','Chiiti Muthyalu Mutton Pulav','Chitti Muthyalu Chicken Pulav','Chitti Muthyalu Prawns Pulav','Mixed Non Veg Pulav','Fish Pulav','Naatukodi Pulav','Donne Biryani']),
+  section('nonveg-soups', 'Non-Veg Soup', 'nonveg', ['Chicken Manchow Soup','Corn Chicken Soup','Chicken Soup','Mutton Marag','Mutton Paya Soup']),
+  section('fish-curries', 'Fish Curries', 'nonveg', ['Roop Chandh Iguru','Matta Gidasala Pulusu','Netthala Iguru','Bheem Varam Chepala Pulusu','Koraminu Pulusu','Bommidayala Pulusu','Ramala Pulusu']),
+];
+
+export const featuredMenuItems = [
+  { name: 'Chicken Dum Biryani', category: 'Non Veg Biryani’s', image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1200&q=85', temporary: true },
+  { name: 'Paneer Butter Masala', category: 'Kurma Curries', image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1200&q=85' },
+  { name: 'Gulab Jamun', category: 'Sweets', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gulab%20Jamun2.jpg?width=1200', temporary: true },
+];
+
+export function searchMenuSections({ type = 'all', category = '', query = '' } = {}) {
+  const normalizedQuery = query.trim().toLocaleLowerCase();
+  const search = (sectionType, sectionCategory = '') => menuSections.map(section => {
+    if ((sectionType !== 'all' && section.type !== sectionType) || (sectionCategory && section.id !== sectionCategory)) return null;
+    const categoryMatches = normalizedQuery && section.name.toLocaleLowerCase().includes(normalizedQuery);
+    const items = section.items.filter(item => !normalizedQuery || categoryMatches || item.name.toLocaleLowerCase().includes(normalizedQuery));
+    return items.length ? { ...section, items } : null;
+  }).filter(Boolean);
+
+  if (category) {
+    const sections = search(type, category);
+    return { sections, mode: sections.length ? 'matches' : 'category-empty' };
+  }
+
+  const sections = search(type);
+  if (sections.length || !normalizedQuery || type === 'all') {
+    return { sections, mode: sections.length ? 'matches' : 'empty' };
+  }
+
+  const globalSections = search('all');
+  return { sections: globalSections, mode: globalSections.length ? 'cross-type' : 'empty' };
+}

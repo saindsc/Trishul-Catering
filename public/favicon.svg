@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Trishul Caterers</title>
+  <circle cx="32" cy="32" r="29" fill="#fffdfa" stroke="#c6943f" stroke-width="2"/>
+  <path d="M32 15v34M24 22c5-4 12-4 17 1M24 31c5-4 12-4 17 1M24 40c5-4 12-4 17 1" fill="none" stroke="#10263b" stroke-linecap="round" stroke-width="3"/>
+</svg>

@@ -1,0 +1,2 @@
+import { Eyebrow } from '../ui';
+export function MenuHero() { return <section className="menu-hero-premium"><div className="menu-hero-image"/><div className="menu-hero-shade"/><div className="menu-hero-content"><Eyebrow light>Trishul Caterers · Hyderabad</Eyebrow><h1>Made for every<br/><em>kind of gathering.</em></h1><p>A generous collection of vegetarian and non-vegetarian catering choices, prepared around the way you celebrate.</p></div><span className="menu-hero-note">Pure Veg &amp; Non-Veg · Since 2019</span></section>; }

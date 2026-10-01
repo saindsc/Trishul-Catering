@@ -1,0 +1,3 @@
+import { MenuItem } from './MenuItem';
+import { Reveal } from '../motion/Reveal';
+export function MenuCategory({ section, items, selectedIds, onToggle }) { return <section id={section.id} className="menu-category"><Reveal><div className="menu-category-heading"><div><span>{section.type === 'veg' ? 'Vegetarian selection' : 'Non-vegetarian selection'}</span><h2>{section.name}</h2>{section.description && <p>{section.description}</p>}</div><b>{items.length} dishes</b></div></Reveal><ul>{items.map((item,index) => <MenuItem key={item.id} item={item} index={index} selected={selectedIds.includes(item.id)} onToggle={onToggle}/>)}</ul></section>; }
